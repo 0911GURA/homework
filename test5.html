@@ -1,115 +1,87 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>個人簡歷</title>
-  <style>
-body {
-  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
-  font-family: "Microsoft JhengHei", sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #2c3e50;
-}
-
-.container {
-  width: 90%;
-  max-width: 700px;
-  margin: 40px auto;
-  background-color: #ffffff;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-  text-align: center;
-  color: #2c3e50;
-  font-size: 36px;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-p {
-  text-align: center;
-  color: #555;
-  font-size: 18px;
-  line-height: 1.8;
-  margin: 10px 0;
-}
-
-img {
-  max-width: 150px;
-  height: auto;
-  border-radius: 50%;
-  display: block;
-  margin: 20px auto;
-  border: 3px solid #555;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-  text-align: center;
-  color: #444;
-  margin-top: 30px;
-  font-weight: normal;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  font-size: 24px;
-}
-
-.section {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-radius: 8px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  img {
-    max-width: 120px;
-  }
-}
-
-  </style>
+  <title>阿冰姐大帥哥製作的點餐系統</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>林維濬的個人簡歷</h1>
-    <p>姓名：林維濬</p>
-    <p>照片：<img src="阿梅.webp" alt="個人照片"></p>
-    <p>簡歷：每次看到我都是很忙的人</p>
-    <p>學歷：NTTU  Napping Tired Tummy-hungry Unmotivated</p>
-    <p>經歷：經歷了20年：做過學伴計畫；目前在做課輔老師</p>
-    <p>專業能力：什麼都會，但也什麼都不會</p>
-  </div>
+
+  <header>
+    <h1>阿冰姐の點餐系統</h1>
+    <p>請選擇您要的商品與數量：</p>
+  </header>
+
+  <main>
+    <section class="menu">
+      <nav class="menu-tabs">
+        <button class="tab active" data-tab="menu-img">菜單.jpg</button>
+        <button class="tab" data-tab="冰品">刨冰</button>
+        <button class="tab" data-tab="雪花">雪花 55元</button>
+        <button class="tab" data-tab="豆花">豆花</button>
+        <button class="tab" data-tab="飲料">飲料</button>
+        <button class="tab" data-tab="熟食">熟食</button>
+        <button class="tab" data-tab="冬季">冬季限定</button>
+        <button class="tab" data-tab="cart">購物車 / 用餐方式 / 功能操作</button>
+      </nav>
+
+      <div class="tab-content" id="menu-img">
+        <img src="菜單.jpg" alt="菜單" class="menu-image">
+      </div>
+
+      <div class="tab-content" id="冰品">
+        <div class="menu-list">
+          <div class="menu-item">紅豆牛奶冰 <span>$65</span></div>
+          <div class="menu-item">綠豆牛奶冰 <span>$65</span></div>
+          <div class="menu-item">芋頭牛奶冰 <span>$65</span></div>
+          <div class="menu-item">仙草冰 <span>$50</span></div>
+          <div class="menu-item">檸檬愛玉冰 <span>$50</span></div>
+          <div class="menu-item">綜合冰(店選) <span>$60</span></div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="飲料">
+        <div class="menu-list drink-list">
+          <div class="menu-item">
+            <span>古早味紅茶</span>
+            <select>
+              <option>正常</option><option>少糖</option><option>半糖</option><option>微糖</option><option>無糖</option>
+            </select>
+            <select>
+              <option>正常</option><option>少冰</option><option>微冰</option><option>去冰</option><option>常溫</option><option>熱</option>
+            </select>
+            <input type="number" min="0" max="10" value="0">
+            <span>$30</span>
+          </div>
+          <!-- 可繼續加上其他飲料項目 -->
+        </div>
+      </div>
+
+      <div class="tab-content" id="cart">
+        <div class="cart-area">
+          <h2>購物車內容</h2>
+          <textarea readonly>目前購物車內容：</textarea>
+
+          <div class="dine-option">
+            <h3>請選擇用餐方式：</h3>
+            <label><input type="radio" name="dine" checked> 內用</label>
+            <label><input type="radio" name="dine"> 外帶</label>
+          </div>
+
+          <div class="button-group">
+            <button class="checkout">結帳</button>
+            <button class="update">更新購物車</button>
+            <button class="reset">清空</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 阿冰姐大帥哥製作</p>
+  </footer>
+
 </body>
 </html>
-
-
