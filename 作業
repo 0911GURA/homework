@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>阿冰姐大帥哥製作的點餐系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>阿冰姐の點餐系統</h1>
+    <p>請選擇您要的商品與數量：</p>
+  </header>
+
+  <main>
+    <div class="menu-container">
+      <div class="menu-section">
+        <h2>刨冰</h2>
+        <div class="menu-item" data-name="紅豆牛奶冰" data-price="65">紅豆牛奶冰 <span>$65</span> <input type="number" min="0" value="0"></div>
+        <div class="menu-item" data-name="綠豆牛奶冰" data-price="65">綠豆牛奶冰 <span>$65</span> <input type="number" min="0" value="0"></div>
+        <div class="menu-item" data-name="仙草冰" data-price="50">仙草冰 <span>$50</span> <input type="number" min="0" value="0"></div>
+      </div>
+
+      <div class="menu-section">
+        <h2>飲料</h2>
+        <div class="menu-item drink" data-name="古早味紅茶" data-price="30">
+          古早味紅茶 <span>$30</span>
+          <select class="sweetness">
+            <option>正常</option><option>少糖</option><option>半糖</option><option>微糖</option><option>無糖</option>
+          </select>
+          <select class="ice">
+            <option>正常</option><option>少冰</option><option>微冰</option><option>去冰</option><option>常溫</option><option>熱</option>
+          </select>
+          <input type="number" min="0" value="0">
+        </div>
+
+        <div class="menu-item drink" data-name="茉香綠茶" data-price="30">
+          茉香綠茶 <span>$30</span>
+          <select class="sweetness">
+            <option>正常</option><option>少糖</option><option>半糖</option><option>微糖</option><option>無糖</option>
+          </select>
+          <select class="ice">
+            <option>正常</option><option>少冰</option><option>微冰</option><option>去冰</option><option>常溫</option><option>熱</option>
+          </select>
+          <input type="number" min="0" value="0">
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-container">
+      <h2>🛒 購物車 / 用餐方式</h2>
+      <textarea id="cart" readonly>目前購物車內容：</textarea>
+
+      <div class="dine-option">
+        <h3>用餐方式：</h3>
+        <label><input type="radio" name="dine" value="內用" checked> 內用</label>
+        <label><input type="radio" name="dine" value="外帶"> 外帶</label>
+      </div>
+
+      <div class="button-group">
+        <button id="update">更新購物車</button>
+        <button id="checkout">結帳</button>
+        <button id="reset">清空</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 阿冰姐大帥哥製作</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
