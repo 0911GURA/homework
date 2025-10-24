@@ -1,0 +1,45 @@
+function updateCart() {
+  const cart = document.getElementById("cart");
+  cart.value = "目前購物車內容：\n\n";
+  let total = 0;
+
+  document.querySelectorAll(".menu-item").forEach(item => {
+    const qty = parseInt(item.querySelector("input").value);
+    if (qty > 0) {
+      const name = item.dataset.name;
+      const price = parseInt(item.dataset.price);
+      const subtotal = qty * price;
+      total += subtotal;
+
+      if (item.classList.contains("drink")) {
+        const sweet = item.querySelector(".sweetness").value;
+        const ice = item.querySelector(".ice").value;
+        cart.value += `- ${name} x${qty} = $${subtotal}（甜：${sweet} 冰：${ice}）\n`;
+      } else {
+        cart.value += `- ${name} x${qty} = $${subtotal}\n`;
+      }
+    }
+  });
+
+  const dine = document.querySelector("input[name='dine']:checked").value;
+  cart.value += `\n用餐方式：${dine}\n`;
+  cart.value += `總金額：$${total}`;
+}
+
+document.getElementById("update").addEventListener("click", updateCart);
+
+document.getElementById("checkout").addEventListener("click", () => {
+  updateCart();
+  alert("訂單確認：\n\n" + document.getElementById("cart").value);
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  document.querySelectorAll(".menu-item input").forEach(i => i.value = 0);
+  document.querySelectorAll(".sweetness").forEach(s => s.value = "正常");
+  document.querySelectorAll(".ice").forEach(i => i.value = "正常");
+  document.querySelector("input[name='dine'][value='內用']").checked = true;
+  updateCart();
+});
+
+// 預設載入顯示購物車內容
+updateCart();

@@ -1,0 +1,111 @@
+body {
+  font-family: "微軟正黑體", Arial, sans-serif;
+  background-color: #fffaf7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #f9f9f9;
+  color: #e07a5f;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px solid #e07a5f;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.menu-container {
+  flex: 2;
+  min-width: 400px;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.menu-section h2 {
+  color: #e07a5f;
+  border-bottom: 2px solid #f4a261;
+  padding-bottom: 5px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item input, .menu-item select {
+  margin-left: 5px;
+}
+
+.cart-container {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.cart-container textarea {
+  width: 100%;
+  height: 250px;
+  resize: none;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.dine-option {
+  margin-top: 15px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#update { background-color: #3a86ff; }
+#checkout { background-color: #2a9d8f; }
+#reset { background-color: #d62828; }
+
+button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #f4a261;
+  color: white;
+  font-size: 14px;
+}
