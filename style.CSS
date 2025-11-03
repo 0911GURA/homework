@@ -49,15 +49,19 @@ main {
 
 .menu-item {
   display: grid;
-  grid-template-columns: 1fr 70px 60px; 
+  grid-template-columns: 1fr 70px 60px;
   align-items: center;
   margin: 6px 0;
   border-bottom: 1px solid #eee;
   padding-bottom: 4px;
-  column-gap: 10px; 
+  column-gap: 10px;
 }
 
-.menu-item span {
+.menu-item .item-name {
+  text-align: left;
+}
+
+.menu-item .item-price {
   text-align: right;
   color: #e63946;
   font-weight: bold;
@@ -70,7 +74,6 @@ main {
   border-radius: 4px;
   padding: 3px;
 }
-
 
 .cart-container {
   flex: 1;
@@ -87,4 +90,3 @@ footer {
   padding: 10px;
   margin-top: 20px;
 }
-
