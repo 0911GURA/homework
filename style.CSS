@@ -1,111 +1,86 @@
 body {
-  font-family: "微軟正黑體", Arial, sans-serif;
-  background-color: #fffaf7;
+  font-family: "Microsoft JhengHei", sans-serif;
   margin: 0;
   padding: 0;
+  background: #f6f9fc;
   color: #333;
 }
 
 header {
-  background-color: #f9f9f9;
-  color: #e07a5f;
+  background: #3da9fc;
+  color: white;
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 3px solid #e07a5f;
+  padding: 20px;
 }
 
-header h1 {
+h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 2em;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   padding: 20px;
 }
 
 .menu-container {
-  flex: 2;
-  min-width: 400px;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  flex: 3;
+}
+
+.menu-section {
   background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
 }
 
 .menu-section h2 {
-  color: #e07a5f;
-  border-bottom: 2px solid #f4a261;
-  padding-bottom: 5px;
+  background: #ffd803;
+  text-align: center;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 0;
 }
 
 .menu-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 6px 0;
+  align-items: center;
+  margin: 6px 0;
   border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
 }
 
-.menu-item input, .menu-item select {
-  margin-left: 5px;
+.menu-item span {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.menu-item input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 3px;
 }
 
 .cart-container {
   flex: 1;
-  background: #f9f9f9;
-  border-radius: 8px;
+  background: #e9f5ff;
   padding: 20px;
-  margin: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-.cart-container textarea {
-  width: 100%;
-  height: 250px;
-  resize: none;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-}
-
-.dine-option {
-  margin-top: 15px;
-}
-
-.button-group {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-button {
-  flex: 1;
-  margin: 5px;
-  padding: 10px;
-  font-size: 16px;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#update { background-color: #3a86ff; }
-#checkout { background-color: #2a9d8f; }
-#reset { background-color: #d62828; }
-
-button:hover {
-  opacity: 0.8;
+  border-radius: 10px;
+  height: fit-content;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
-  background: #f4a261;
+  background: #3da9fc;
   color: white;
-  font-size: 14px;
+  padding: 10px;
+  margin-top: 20px;
 }
