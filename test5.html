@@ -1,53 +1,87 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <title>阿冰姐の點餐系統</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>阿冰姐の點餐系統</h1>
-    <p>請選擇您要的商品與數量：</p>
-  </header>
+/* ====== 基本樣式 ====== */
+body {
+  font-family: "微軟正黑體", sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-  <main>
-    <div class="menu-container">
+header {
+  background-color: #ffb6c1;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
 
-      <!-- 🍧 刨冰 -->
-      <section class="menu-section">
-        <h2>刨冰</h2>
-        <div class="menu-item"><span class="item-name">紅豆牛奶冰</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">綠豆牛奶冰</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">芋頭牛奶冰</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">仙草冰</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">檸檬愛玉冰</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">綜合冰（店選）</span><span class="item-price">$60</span><input type="number" min="0" value="0"></div>
-      </section>
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
 
-      <!-- 🍵 飲料 -->
-      <section class="menu-section">
-        <h2>飲料</h2>
-        <div class="menu-item"><span class="item-name">可樂/雪碧</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">奶紅/奶綠</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-        <div class="menu-item"><span class="item-name">鮮奶珍珠</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-      </section>
+.menu-container {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
 
-    </div>
+.menu-section {
+  background-color: #fff;
+  border: 2px solid #ffd6e0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
 
-    <aside class="cart-container">
-      <h2>🛒 用餐方式</h2>
-      <label><input type="radio" name="dine" value="內用" checked> 內用</label><br>
-      <label><input type="radio" name="dine" value="外帶"> 外帶</label>
-    </aside>
-  </main>
+.menu-section h2 {
+  color: #d63384;
+}
 
-  <footer>
-    <p>正在思考如何設計嘉明套餐的大帥哥製作</p>
-  </footer>
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
 
-  <!-- 📸 永遠固定在右下角的菜單圖片 -->
-  <img src="menu.jpg" alt="阿冰姐菜單" id="menuPhoto">
+.menu-item input {
+  width: 60px;
+  text-align: center;
+}
 
-</body>
-</html>
+.cart-container {
+  flex: 1;
+  background-color: #fff0f5;
+  border: 2px solid #ffaec9;
+  border-radius: 10px;
+  padding: 15px;
+  height: fit-content;
+}
+
+footer {
+  background-color: #ffb6c1;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ====== 📸 右下角固定的菜單圖片 ====== */
+#menuPhoto {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;              /* 可調整大小 */
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0.95;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#menuPhoto:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
