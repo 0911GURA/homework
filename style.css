@@ -1,4 +1,4 @@
-/* 檔名：style.css */
+/* 一般版面設計 */
 body {
   font-family: "微軟正黑體", sans-serif;
   background-color: #fffafc;
@@ -60,4 +60,23 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
+}
+
+/* 📸 固定在右下角的菜單圖片 */
+#menuPhoto {
+  position: fixed;
+  bottom: 20px;      /* 距離下方 20px */
+  right: 20px;       /* 距離右邊 20px */
+  width: 180px;      /* 圖片寬度，可自行調整 */
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  cursor: pointer;
+  z-index: 1000;     /* 確保顯示在最上層 */
+  opacity: 0.95;     /* 稍微透明一點不會太突兀 */
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#menuPhoto:hover {
+  transform: scale(1.05);
+  opacity: 1;
 }
