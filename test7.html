@@ -1,17 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+Press any key: <input type="text" id="key">
+</form>
 <script>
-let d=new Date();
-let theDay=d.getDay();
-switch (theDay){
-case 5:
-document.write("Finally Friday");
-break;
-case 6:
-document.write("Super Saturday");
-break;
-case 0:
-document.write("Sleepy Sunday");
-break;
-default:
-document.write("I'm looking forward to this weekend!");
-}
+let obj = document.querySelector("#key");
+obj.addEventListener("keydown", function(event){
+let x = event.key;
+console.log(x);
+});
 </script>
+</body>
+</html>
