@@ -1,21 +1,29 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
-<form>Press any key: <input type="text" id="key"></form>
+<!DOCTYPE html>
+<html>
+<style>
+#animate { width: 50px; height: 50px; position: absolute; background: red; }
+</style>
+<body>
+<div id="animate"></div>
 <script>
-let obj = document.querySelector("#key");
-obj.addEventListener("keydown", function(event){
-let x = event.key;
-switch(x){
+let area = document.querySelector("body");
+area.addEventListener("keydown", function(event){
+let elem = document.getElementById("animate");
+let x = elem.offsetLeft || 0;
+let y = elem.offsetTop || 0;
+let key = event.key;
+switch(key){
 case "ArrowUp":
-alert("上");
+elem.style.top = (y-30) + 'px';
 break;
 case "ArrowDown":
-alert("下");
+elem.style.top = (y+30) + 'px';
 break;
 case "ArrowLeft":
-alert("左");
+elem.style.left = (x-30) + 'px';
 break;
 case "ArrowRight":
-alert("右");
+elem.style.left = (x+30) + 'px';
 break;
 }
 });</script></body></html>
