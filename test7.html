@@ -7,7 +7,7 @@ width: 1px; height: 1px; position: absolute; background: blue;
 </style>
 <body>
 <script>
-for (variable=1;variable<=10000;variable=variable+1) {
+for (variable=1;variable<=10000000;variable=variable+1) {
 let x = Math.floor((Math.random() * 400) + 1);
 let y = Math.sqrt(160000-x*x) - Math.floor((Math.random() * 400) + 1);
 let elem = document.createElement("div");
@@ -17,3 +17,4 @@ elem.style.top = y + "px";
 document.body.appendChild(elem);
 }
 </script></body></html>
+
