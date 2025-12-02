@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<body>
-<form>
-Press any key: <input type="text" id="key">
-</form>
+<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
+<form>Press any key: <input type="text" id="key"></form>
 <script>
 let obj = document.querySelector("#key");
 obj.addEventListener("keydown", function(event){
 let x = event.key;
-console.log(x);
-});
-</script>
-</body>
-</html>
+switch(x){
+case "ArrowUp":
+alert("上");
+break;
+case "ArrowDown":
+alert("下");
+break;
+case "ArrowLeft":
+alert("左");
+break;
+case "ArrowRight":
+alert("右");
+break;
+}
+});</script></body></html>
