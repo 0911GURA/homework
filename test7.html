@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
-<style>
-.animate {
-width: 1px; height: 1px; position: absolute; background: blue;
-}
-</style>
-<body>
+<body><p id="clock"></p>
 <script>
-for (variable=1;variable<=100000000000000;variable=variable+1) {
-let x = Math.floor((Math.random() * 400) + 1);
-let y = Math.sqrt(160000-x*x) - Math.floor((Math.random() * 400) + 1);
-let elem = document.createElement("div");
-elem.setAttribute("class", "animate");
-elem.style.left = x + "px";
-elem.style.top = y + "px";
-document.body.appendChild(elem);
+window.addEventListener("load", function(){
+setInterval(display, 1000);
+});
+function display(){
+let date = new Date();
+let hour = date.getHours();
+let min = date.getMinutes();
+let sec = date.getSeconds();
+document.getElementById("clock").innerHTML = hour + ": " + min + ": " + sec;
 }
 </script></body></html>
-
-
