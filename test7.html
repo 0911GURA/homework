@@ -2,27 +2,18 @@
 #header {height:150px;background-color:#f9c81e;padding:1em}
 #article {height:400px;background-color:#fffaf3;padding:1em}
 </style><body>
-<div id="header"><h1>12</h1></div>
+<div id="header"><h1>Header</h1></div>
 <div id="article">
-<button onclick="display1();">Content 1</button>
-<button onclick="display2();">Content 2</button>
-<p id="content1" style="display:none">1</p>
-<p id="content2" style="display:none">2</p>
-</div>
-<script>
-function display1(){
-let x = document.getElementById("content1");
-let y = document.getElementById("content2");
+<button>Click me!</button>
+<p id="content">Hello!</p>
+</div><script>
+let btn = document.querySelector("button");
+btn.addEventListener("click", function(){
+let x = document.getElementById("content");
+if (x.style.display === "none") {
 x.style.display = "block";
-y.style.display ="none";
-}
-function display2(){
-let x = document.getElementById("content1");
-let y = document.getElementById("content2");
+} else {
 x.style.display = "none";
-y.style.display ="block";
 }
+});
 </script></body>
-
-
-
