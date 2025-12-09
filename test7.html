@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html>
-<body><p id="clock"></p>
+<style>
+#header {height:150px;background-color:#f9c81e;padding:1em}
+#article {height:400px;background-color:#fffaf3;padding:1em}
+</style><body>
+<div id="header"><h1>Header</h1></div>
+<div id="article">
+<button onclick="display1();">Content 1</button>
+<button onclick="display2();">Content 2</button>
+<p id="content1" style="display:none">Page 1</p>
+<p id="content2" style="display:none">Page 2</p>
+</div>
 <script>
-window.addEventListener("load", function(){
-setInterval(display, 1000);
-});
-function display(){
-let date = new Date();
-let hour = date.getHours();
-let min = date.getMinutes();
-let sec = date.getSeconds();
-document.getElementById("clock").innerHTML = hour + ": " + min + ": " + sec;
+function display1(){
+let x = document.getElementById("content1");
+let y = document.getElementById("content2");
+x.style.display = "block";
+y.style.display ="none";
 }
-</script></body></html>
+function display2(){
+let x = document.getElementById("content1");
+let y = document.getElementById("content2");
+x.style.display = "none";
+y.style.display ="block";
+}
+</script></body>
