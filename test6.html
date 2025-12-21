@@ -73,17 +73,19 @@
 // 加入購物車按鈕
 document.getElementById("orderBtn").addEventListener("click", function() {
 
-    // 顯示「您真內行」
-    alert("您真內行 😄");
-
-    let qty = Number(document.getElementById("qty").value);
+    let qtyInput = document.getElementById("qty");
+    let qty = Number(qtyInput.value);
     let price = 100;
 
     // 防止輸入 0 或負數
     if (qty <= 0) {
-        alert("請輸入正確的數量！");
-        return;
+        alert("請輸入大於 0 的數量！");
+        qtyInput.value = 0; // 自動重設為 0
+        return; // 結束，不往下執行
     }
+
+    // 只有正確數量才會顯示
+    alert("您真內行 😄");
 
     let total = qty * price;
 
@@ -98,9 +100,11 @@ document.getElementById("orderBtn").addEventListener("click", function() {
 // 關閉視窗按鈕
 document.getElementById("closeBtn").addEventListener("click", function() {
     document.getElementById("checkoutModal").style.display = "none";
-    document.getElementById("qty").value = 1; // 自動清空數量
+    document.getElementById("qty").value = 0; // 關閉時也重設為 0
 });
 </script>
 
+
 </body>
 </html>
+
