@@ -12,7 +12,6 @@
   <p>請選擇您要的商品與數量：</p>
 </header>
 
-<!-- 分類按鈕 -->
 <div class="category-buttons">
   <button data-cat="bing">刨冰</button>
   <button data-cat="snow">雪花冰</button>
@@ -26,102 +25,43 @@
   <!-- 刨冰 -->
   <section class="menu-section" id="bing">
     <h2>🍧 刨冰</h2>
-    <div class="menu-item"><span class="item-name">紅豆牛奶冰</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綠豆牛奶冰</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">芋頭牛奶冰</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">仙草冰</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">檸檬愛玉冰</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綜合冰（店選）</span><span class="item-price">$60</span><input type="number" min="0" value="0"></div>
+    <div class="menu-item">
+      <span class="item-name">紅豆牛奶冰</span>
+      <span class="item-price">$65</span>
+      <div class="qty-control">
+        <button class="minus">-</button>
+        <input type="number" min="0" value="0">
+        <button class="plus">+</button>
+      </div>
+    </div>
   </section>
 
   <!-- 雪花冰 -->
   <section class="menu-section" id="snow">
     <h2>❄ 雪花冰</h2>
-    <div class="menu-item"><span class="item-name">巧克力醬雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">草莓醬雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">煉乳雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">烏梅雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">百香果雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">芒果醬雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">情人果雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">巧克力米雪花冰</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
+    <div class="menu-item">
+      <span class="item-name">巧克力雪花冰</span>
+      <span class="item-price">$55</span>
+      <div class="qty-control">
+        <button class="minus">-</button>
+        <input type="number" min="0" value="0">
+        <button class="plus">+</button>
+      </div>
+    </div>
   </section>
 
   <!-- 豆花 -->
   <section class="menu-section" id="tofu">
     <h2>🍮 豆花</h2>
-    <div class="menu-item"><span class="item-name">芋頭豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">紅豆豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綠豆豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">湯圓豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">芋圓豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">地瓜圓豆花</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-  </section>
-
-  <!-- 熱食 -->
-  <section class="menu-section" id="hot">
-    <h2>🍜 熱食</h2>
-    <div class="menu-item"><span class="item-name">炒泡麵</span><span class="item-price">$85</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">鍋燒麵</span><span class="item-price">$85</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">蛋包飯</span><span class="item-price">$85</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">皮蛋瘦肉粥</span><span class="item-price">$85</span><input type="number" min="0" value="0"></div>
-  </section>
-
-  <!-- 飲料 -->
-  <section class="menu-section" id="drink">
-    <h2>🍺 飲料 (700cc)</h2>
-    <div class="menu-item"><span class="item-name">古早味紅茶</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">檸檬水</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">茉香綠茶</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">青茶</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">古早味冬瓜茶</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">冬瓜青茶</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">冰/熱咖啡 500c.c</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">多多綠茶</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">梅子綠</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">梅子青</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">梅子檸檬</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">阿華田</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">阿華田拿鐵</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">可樂</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">雪碧</span><span class="item-price">$30</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">梅子雪碧</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">梅子可樂</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">多多雪碧</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">冬瓜檸檬</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">金桔檸檬</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">檸檬愛玉凍飲</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">仙草蜜冬瓜</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠紅茶</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠綠茶</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠青茶</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">咖啡牛奶</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">鮮奶紅茶</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">鮮奶冬瓜</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">鮮奶綠茶</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠鮮奶紅</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠鮮奶冬</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">珍珠鮮奶綠</span><span class="item-price">$55</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">鮮奶珍珠</span><span class="item-price">$65</span><input type="number" min="0" value="0"></div>
-  </section>
-
-  <!-- 秋冬限定 / 其他 -->
-  <section class="menu-section" id="special">
-    <h2>秋冬限定 / 其他</h2>
-    <div class="menu-item"><span class="item-name">綜合燒仙草</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綜合綠豆湯</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綜合圓仔湯</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綜合紅豆湯</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">愛文芒果冰</span><span class="item-price">$90</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">愛文芒果雪花</span><span class="item-price">$120</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">新鮮當季水果冰</span><span class="item-price">$90</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">新鮮當季水果雪花</span><span class="item-price">$120</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綜合嫩仙草</span><span class="item-price">$40</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">香蕉清冰</span><span class="item-price">$50</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">香蕉冰紅茶</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">香蕉冰冬瓜</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
-    <div class="menu-item"><span class="item-name">綠豆湯(薏仁)</span><span class="item-price">$45</span><input type="number" min="0" value="0"></div>
+    <div class="menu-item">
+      <span class="item-name">芋頭豆花</span>
+      <span class="item-price">$40</span>
+      <div class="qty-control">
+        <button class="minus">-</button>
+        <input type="number" min="0" value="0">
+        <button class="plus">+</button>
+      </div>
+    </div>
   </section>
 
   <!-- 購物車 -->
@@ -158,12 +98,10 @@ const dineRadios = document.querySelectorAll('input[name="dine"]');
 const categoryBtns = document.querySelectorAll('.category-buttons button');
 const sections = document.querySelectorAll('.menu-section');
 
-// 取得用餐方式
 function getDineType() {
   return document.querySelector('input[name="dine"]:checked').value;
 }
 
-// 更新購物車
 function updateCart() {
   cartList.innerHTML = '';
   let total = 0;
@@ -191,12 +129,26 @@ function updateCart() {
   totalPriceEl.textContent = `總金額：$${total}`;
 }
 
-// 商品數量變化事件
+// 數量輸入框變化
 items.forEach(item => {
-  item.querySelector('input').addEventListener('input', updateCart);
+  const input = item.querySelector('input');
+  input.addEventListener('input', updateCart);
+
+  const plusBtn = item.querySelector('.plus');
+  const minusBtn = item.querySelector('.minus');
+
+  plusBtn.addEventListener('click', () => {
+    input.value = parseInt(input.value) + 1;
+    updateCart();
+  });
+
+  minusBtn.addEventListener('click', () => {
+    input.value = Math.max(0, parseInt(input.value) - 1);
+    updateCart();
+  });
 });
 
-// 用餐方式變化事件
+// 用餐方式變化
 dineRadios.forEach(radio => {
   radio.addEventListener('change', updateCart);
 });
@@ -215,31 +167,23 @@ confirmBtn.addEventListener('click', () => {
   }
 
   let text = `🍧 阿冰姐點餐系統\n-----------------\n用餐方式：${getDineType()}\n\n`;
-
-  cartList.querySelectorAll('li').forEach(li => {
-    text += li.textContent + '\n';
-  });
-
+  cartList.querySelectorAll('li').forEach(li => text += li.textContent + '\n');
   text += `\n${totalPriceEl.textContent}\n\n❤️ 訂單已送出，請稍候`;
   alert(text);
 });
 
-// 切換分類（只改 display，不會重置數量）
+// 切換分類
 categoryBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const cat = btn.dataset.cat;
-    sections.forEach(sec => {
-      sec.style.display = sec.id === cat ? 'block' : 'none';
-    });
+    sections.forEach(sec => sec.style.display = sec.id === cat ? 'block' : 'none');
   });
 });
 
 // 初始只顯示刨冰
 sections.forEach(sec => sec.style.display = 'none');
 document.getElementById('bing').style.display = 'block';
-
 </script>
 
 </body>
 </html>
-
