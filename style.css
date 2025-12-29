@@ -1,144 +1,90 @@
-/* ====== 基本樣式 ====== */
-body {
-  font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  margin: 0;
-  padding: 0;
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 0; 
+  padding: 0; 
 }
 
-header {
-  background-color: #3399ff;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
+header { 
+  background: #ff7675; 
+  color: #fff; 
+  padding: 10px; 
+  text-align: center; 
 }
 
-main {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+header a { 
+  color: white; 
+  text-decoration: none; 
 }
 
-/* ====== 菜單區塊 ====== */
-.menu-container {
-  flex: 3;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  width: 70%;
+main { 
+  display: flex; 
+  flex-wrap: wrap; 
+  padding: 10px; 
 }
 
-.menu-section {
-  background-color: #e6f0ff;
-  border: 2px solid #99ccff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+.menu-container { 
+  flex: 3; 
+  min-width: 300px; 
 }
 
-.menu-section h2 {
-  color: #0066cc;
+.cart-container { 
+  flex: 1; 
+  min-width: 200px; 
+  padding: 10px; 
+  border-left: 2px solid #ddd; 
 }
 
-/* ====== 商品項目 ====== */
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px 0;
+.menu-section { 
+  display: none; 
+  margin-bottom: 20px; 
 }
 
-.menu-item .item-name {
-  flex: 1;
-  color: #004080;
+.menu-section.active { 
+  display: block; 
 }
 
-.menu-item .item-price {
-  width: 60px;
-  text-align: right;
-  color: #0066cc;
-  font-weight: bold;
+.menu-item { 
+  display: flex; 
+  justify-content: space-between; 
+  margin: 5px 0; 
 }
 
-.menu-item input {
-  width: 60px;
-  text-align: center;
-  border: 1px solid #99ccff;
-  border-radius: 5px;
-  padding: 2px;
+.menu-item input { 
+  width: 50px; 
 }
 
-/* ====== 側邊購物車 ====== */
-.cart-container {
-  flex: 1;
-  background-color: #fff8f0;
-  border: 2px solid #3399ff;
-  border-radius: 10px;
-  padding: 15px;
-  height: fit-content;
-  width: 25%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.category-buttons { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 5px; 
+  margin: 10px 0; 
 }
 
-/* ====== 購物車列表 ====== */
-#cartList {
-  list-style: none;
-  padding: 0;
+.category-buttons button { 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius: 5px; 
+  background: #ff7675; 
+  color: #fff; 
+  cursor: pointer; 
 }
 
-#cartList li {
-  border-bottom: 1px dashed #ccc;
-  padding: 4px 0;
+.category-buttons button:hover { 
+  background: #e55039; 
 }
 
-#totalPrice {
-  font-size: 18px;
-  font-weight: bold;
-  color: #c0392b;
+footer { 
+  background: #eee; 
+  text-align: center; 
+  padding: 5px; 
+  margin-top: 20px; 
 }
 
-button {
-  width: 100%;
-  margin-top: 8px;
-  padding: 8px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#confirmBtn {
-  background: #ff7675;
-  color: #fff;
-}
-
-#clearBtn {
-  background: #dfe6e9;
-}
-
-/* ====== 頁尾 ====== */
-footer {
-  background-color: #3399ff;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-/* ====== 右下角固定菜單圖片 ====== */
-#menuPhoto {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;    /* 固定右下角 */
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
-  cursor: pointer;
-  z-index: 1000;
-  opacity: 0.95;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-#menuPhoto:hover {
-  transform: scale(1.05);
-  opacity: 1;
+#menuPhoto { 
+  position: fixed; 
+  bottom: 10px; 
+  right: 10px; 
+  width: 120px; 
+  border: 2px solid #ccc; 
+  border-radius: 5px; 
 }
