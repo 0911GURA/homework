@@ -1,11 +1,9 @@
-/* 基本排版 */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* header */
 header {
   background: #007bff;
   color: white;
@@ -13,7 +11,6 @@ header {
   text-align: center;
 }
 
-/* 分類按鈕 */
 .category-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -37,43 +34,43 @@ header {
   background-color: #0056b3;
 }
 
-/* main 區域排版 */
-main {
-  display: flex;
-  gap: 20px;
-  padding: 1rem 2rem;
-  margin-right: 320px; /* 留出購物車寬度 */
-  flex-wrap: wrap;
-}
-
-/* menu section */
 .menu-section {
-  flex: 1;
-  min-width: 250px;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
 }
 
-/* menu item */
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 5px 0;
-  gap: 10px;
 }
 
-.menu-item span {
-  flex: 1;
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.menu-item input {
+.qty-control input {
   width: 50px;
-  min-width: 50px;
   text-align: center;
-  padding: 5px;
 }
 
-/* 購物車 */
+.qty-control button {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 3px;
+}
+
+.qty-control button:hover {
+  background-color: #0056b3;
+}
+
 .cart-container {
   position: fixed;
   right: 0;
@@ -83,28 +80,11 @@ main {
   padding: 1rem;
   height: 100vh;
   overflow-y: auto;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
 }
 
-/* footer */
 footer {
   text-align: center;
   padding: 1rem;
   background: #007bff;
   color: white;
-}
-
-/* 手機與小螢幕 */
-@media (max-width: 768px) {
-  main {
-    flex-direction: column;
-    margin-right: 0;
-  }
-
-  .cart-container {
-    position: static;
-    width: 100%;
-    height: auto;
-    margin-top: 1rem;
-  }
 }
