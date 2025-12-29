@@ -158,10 +158,12 @@ const dineRadios = document.querySelectorAll('input[name="dine"]');
 const categoryBtns = document.querySelectorAll('.category-buttons button');
 const sections = document.querySelectorAll('.menu-section');
 
+// 取得用餐方式
 function getDineType() {
   return document.querySelector('input[name="dine"]:checked').value;
 }
 
+// 更新購物車
 function updateCart() {
   cartList.innerHTML = '';
   let total = 0;
@@ -189,12 +191,12 @@ function updateCart() {
   totalPriceEl.textContent = `總金額：$${total}`;
 }
 
-// 商品數量變化
+// 商品數量變化事件
 items.forEach(item => {
   item.querySelector('input').addEventListener('input', updateCart);
 });
 
-// 用餐方式變化
+// 用餐方式變化事件
 dineRadios.forEach(radio => {
   radio.addEventListener('change', updateCart);
 });
@@ -222,7 +224,7 @@ confirmBtn.addEventListener('click', () => {
   alert(text);
 });
 
-// 切換分類
+// 切換分類（只改 display，不會重置數量）
 categoryBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const cat = btn.dataset.cat;
@@ -235,7 +237,9 @@ categoryBtns.forEach(btn => {
 // 初始只顯示刨冰
 sections.forEach(sec => sec.style.display = 'none');
 document.getElementById('bing').style.display = 'block';
+
 </script>
 
 </body>
 </html>
+
