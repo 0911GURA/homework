@@ -4,6 +4,7 @@ body {
   padding: 0;
 }
 
+/* Header */
 header {
   background: #007bff;
   color: white;
@@ -11,6 +12,7 @@ header {
   text-align: center;
 }
 
+/* 分類按鈕 */
 .category-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -34,17 +36,36 @@ header {
   background-color: #0056b3;
 }
 
+/* 主畫面讓出購物車空間 */
+main {
+  margin-right: 320px; /* ⭐ 關鍵 */
+}
+
+/* 菜單區塊 */
 .menu-section {
   padding: 1rem 2rem;
 }
 
+/* ⭐ 重點：菜單排列方式（不再用 space-between） */
 .menu-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 5px 0;
+  gap: 20px;
+  margin: 8px 0;
 }
 
+/* 品名固定寬度 */
+.item-name {
+  width: 160px;
+}
+
+/* 價格靠左 */
+.item-price {
+  width: 60px;
+  text-align: left;
+}
+
+/* 數量控制 */
 .qty-control {
   display: flex;
   align-items: center;
@@ -71,6 +92,7 @@ header {
   background-color: #0056b3;
 }
 
+/* 購物車 */
 .cart-container {
   position: fixed;
   right: 0;
@@ -80,20 +102,13 @@ header {
   padding: 1rem;
   height: 100vh;
   overflow-y: auto;
+  z-index: 9999;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   background: #007bff;
   color: white;
 }
-main {
-  margin-right: 320px; /* 預留給右邊購物車 */
-}
-
-.cart-container {
-  z-index: 9999; /* 確保在最上層 */
-}
-
-
