@@ -88,3 +88,12 @@ footer {
   background: #007bff;
   color: white;
 }
+main {
+  margin-right: 320px; /* 預留給右邊購物車 */
+}
+
+.cart-container {
+  z-index: 9999; /* 確保在最上層 */
+}
+
+
