@@ -102,17 +102,19 @@ function getDineType() {
   return document.querySelector('input[name="dine"]:checked').value;
 }
 
+function getQty(input) {
+  return Number.isNaN(input.valueAsNumber) ? 0 : input.valueAsNumber;
+}
+
 function updateCart() {
   cartList.innerHTML = '';
   let total = 0;
 
   items.forEach(item => {
     const name = item.querySelector('.item-name').innerText;
-    const price = parseInt(item.querySelector('.item-price').innerText.replace('$', ''));
+    const price = Number(item.querySelector('.item-price').innerText.replace('$', ''));
     const input = item.querySelector('input');
-    let qty = parseInt(input.value) || 0;   // ⭐ 關鍵修正
-
-    input.value = qty; // 保證顯示正常數字
+    const qty = getQty(input);
 
     if (qty > 0) {
       const li = document.createElement('li');
@@ -132,25 +134,21 @@ items.forEach(item => {
   const plusBtn = item.querySelector('.plus');
   const minusBtn = item.querySelector('.minus');
 
-  input.addEventListener('input', updateCart);
+  input.addEventListener('change', updateCart);
 
   plusBtn.addEventListener('click', () => {
-    let current = parseInt(input.value) || 0;
-    input.value = current + 1;
+    input.value = getQty(input) + 1;
     updateCart();
   });
 
   minusBtn.addEventListener('click', () => {
-    let current = parseInt(input.value) || 0;
-    input.value = Math.max(0, current - 1);
+    input.value = Math.max(0, getQty(input) - 1);
     updateCart();
   });
 });
 
 // 用餐方式
-dineRadios.forEach(radio => {
-  radio.addEventListener('change', updateCart);
-});
+dineRadios.forEach(radio => radio.addEventListener('change', updateCart));
 
 // 清空
 clearBtn.addEventListener('click', () => {
@@ -160,24 +158,18 @@ clearBtn.addEventListener('click', () => {
 
 // 確認訂單
 confirmBtn.addEventListener('click', () => {
-  if (cartList.children.length === 0) {
+  if (!cartList.children.length) {
     alert('⚠️ 請先選擇商品');
     return;
   }
-
-  let text = `🍧 阿冰姐點餐系統\n-----------------\n用餐方式：${getDineType()}\n\n`;
-  cartList.querySelectorAll('li').forEach(li => text += li.textContent + '\n');
-  text += `\n${totalPriceEl.textContent}\n\n❤️ 訂單已送出，請稍候`;
-  alert(text);
+  alert('訂單已送出');
 });
 
 // 分類切換
 categoryBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const cat = btn.dataset.cat;
-    sections.forEach(sec => {
-      sec.style.display = sec.id === cat ? 'block' : 'none';
-    });
+    sections.forEach(sec => sec.style.display = sec.id === cat ? 'block' : 'none');
   });
 });
 
@@ -187,6 +179,8 @@ document.getElementById('bing').style.display = 'block';
 </script>
 
 
+
 </body>
 </html>
+
 
