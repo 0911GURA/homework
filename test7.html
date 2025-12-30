@@ -110,12 +110,9 @@ function updateCart() {
     const name = item.querySelector('.item-name').innerText;
     const price = parseInt(item.querySelector('.item-price').innerText.replace('$', ''));
     const input = item.querySelector('input');
-    let qty = parseInt(input.value);
+    let qty = parseInt(input.value) || 0;   // ⭐ 關鍵修正
 
-    if (qty < 0 || isNaN(qty)) {
-      qty = 0;
-      input.value = 0;
-    }
+    input.value = qty; // 保證顯示正常數字
 
     if (qty > 0) {
       const li = document.createElement('li');
@@ -129,31 +126,33 @@ function updateCart() {
   totalPriceEl.textContent = `總金額：$${total}`;
 }
 
-// 數量輸入框變化
+// 數量控制
 items.forEach(item => {
   const input = item.querySelector('input');
-  input.addEventListener('input', updateCart);
-
   const plusBtn = item.querySelector('.plus');
   const minusBtn = item.querySelector('.minus');
 
+  input.addEventListener('input', updateCart);
+
   plusBtn.addEventListener('click', () => {
-    input.value = parseInt(input.value) + 1;
+    let current = parseInt(input.value) || 0;
+    input.value = current + 1;
     updateCart();
   });
 
   minusBtn.addEventListener('click', () => {
-    input.value = Math.max(0, parseInt(input.value) - 1);
+    let current = parseInt(input.value) || 0;
+    input.value = Math.max(0, current - 1);
     updateCart();
   });
 });
 
-// 用餐方式變化
+// 用餐方式
 dineRadios.forEach(radio => {
   radio.addEventListener('change', updateCart);
 });
 
-// 清空全部
+// 清空
 clearBtn.addEventListener('click', () => {
   items.forEach(item => item.querySelector('input').value = 0);
   updateCart();
@@ -172,18 +171,22 @@ confirmBtn.addEventListener('click', () => {
   alert(text);
 });
 
-// 切換分類
+// 分類切換
 categoryBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const cat = btn.dataset.cat;
-    sections.forEach(sec => sec.style.display = sec.id === cat ? 'block' : 'none');
+    sections.forEach(sec => {
+      sec.style.display = sec.id === cat ? 'block' : 'none';
+    });
   });
 });
 
-// 初始只顯示刨冰
+// 初始顯示
 sections.forEach(sec => sec.style.display = 'none');
 document.getElementById('bing').style.display = 'block';
 </script>
 
+
 </body>
 </html>
+
