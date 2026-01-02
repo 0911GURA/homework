@@ -392,6 +392,7 @@
       <button class="minus">-</button>
       <input type="number" min="0" value="0">
       <button class="plus">+</button>
+      </div>
     </div>
       <div class="menu-item">
     <span class="item-name">阿華田</span>
@@ -596,15 +597,15 @@
   <!-- 秋冬限定 -->
 <section class="menu-section" id="winter">
   <h2>秋冬限定</h2>
-
-  <div class="menu-item">
-    <span class="item-name">綜合燒仙草</span>
-    <span class="item-price">$50</span>
-    <div class="qty-control">
-      <button class="minus">-</button>
-      <input type="number" min="0" value="0">
-      <button class="plus">+</button>
+<div class="menu-item">
+  <span class="item-name">綜合燒仙草</span>
+  <span class="item-price">$50</span>
+  <div class="qty-control">
+    <button class="minus">-</button>
+    <input type="number" min="0" value="0">
+    <button class="plus">+</button>
   </div>
+</div>
     <div class="menu-item">
     <span class="item-name">綜合紅豆湯</span>
     <span class="item-price">$50</span>
@@ -647,7 +648,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">愛文芒果雪花</span>
     <span class="item-price">$120</span>
     <div class="qty-control">
@@ -656,8 +658,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-    </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">新鮮當季水果冰</span>
     <span class="item-price">$90</span>
     <div class="qty-control">
@@ -666,8 +668,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-    </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">新鮮當季水果雪花</span>
     <span class="item-price">$120</span>
     <div class="qty-control">
@@ -676,8 +678,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-    </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">香蕉清冰</span>
     <span class="item-price">$50</span>
     <div class="qty-control">
@@ -686,8 +688,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-    </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">香蕉冰紅茶</span>
     <span class="item-price">$45</span>
     <div class="qty-control">
@@ -696,9 +698,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-    </div>
-    </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">香蕉冰冬瓜</span>
     <span class="item-price">$45</span>
     <div class="qty-control">
@@ -707,9 +708,8 @@
       <button class="plus">+</button>
     </div>
   </div>
-  </div>
-    </div>
-    <div class="menu-item">
+
+  <div class="menu-item">
     <span class="item-name">綠豆湯(薏仁)</span>
     <span class="item-price">$45</span>
     <div class="qty-control">
@@ -720,6 +720,7 @@
   </div>
 
 </section>
+
 
 
 
@@ -765,25 +766,23 @@ function updateCart() {
   cartList.innerHTML = '';
   let total = 0;
 
-  items.forEach(item => {
-    const nameEl = item.querySelector('.item-name');
-    const priceEl = item.querySelector('.item-price');
-    const input = item.querySelector('input');
+items.forEach(item => {
+  const nameEl = item.querySelector('.item-name');
+  const priceEl = item.querySelector('.item-price');
+  const input = item.querySelector('input');
+  if (!nameEl || !priceEl || !input) return;
 
-    // 防呆：HTML 有問題就直接跳過
-    if (!nameEl || !priceEl || !input) return;
+  const name = nameEl.innerText;
+  const price = Number(priceEl.innerText.replace('$',''));
+  const qty = Number(input.value) || 0;
 
-    const name = nameEl.innerText;
-    const price = Number(priceEl.innerText.replace('$',''));
-    const qty = Number(input.value) || 0;
+  if (qty > 0) {
+    hasItem = true;
+    summary += `${name} × ${qty} = $${price * qty}\n`;
+    total += price * qty;
+  }
+});
 
-    if (qty > 0) {
-      const li = document.createElement('li');
-      li.textContent = `${name} × ${qty} = $${price * qty}`;
-      cartList.appendChild(li);
-      total += price * qty;
-    }
-  });
 
   dineTypeEl.textContent = `用餐方式：${getDineType()}`;
   totalPriceEl.textContent = `總金額：$${total}`;
@@ -868,6 +867,7 @@ document.getElementById('bing').style.display = 'block';
 
 </body>
 </html>
+
 
 
 
