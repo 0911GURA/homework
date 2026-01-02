@@ -58,14 +58,16 @@
     </div>
   </div>
 
-  <div class="menu-item">仙草冰</span>    
-    <span class="item-price">$50</span>
-    <div class="qty-control">
-      <button class="minus">-</button>
-      <input type="number" min="0" value="0">
-      <button class="plus">+</button>
-    </div>
+<div class="menu-item">
+  <span class="item-name">仙草冰</span>
+  <span class="item-price">$50</span>
+  <div class="qty-control">
+    <button class="minus">-</button>
+    <input type="number" min="0" value="0">
+    <button class="plus">+</button>
   </div>
+</div>
+
 <div class="menu-item">
     <span class="item-name">檸檬愛玉冰</span>
     <span class="item-price">$50</span>
@@ -257,7 +259,7 @@
       <button class="plus">+</button>
     </div>
   </div>
-    <div class="menu-item">鍋燒雞絲</span>spann
+    <div class="menu-item">鍋燒雞絲</span>
     <span class="item-price">$85</span>
     <div class="qty-control">
       <button class="minus">-</button>
@@ -605,7 +607,7 @@
   </section>
   
   <!-- 秋冬限定 -->
-<section class="menu-section" id="Fall & Winter Limited Edition">
+<section class="menu-section" id="winter">
   <h2>秋冬限定</h2>
 
   <div class="menu-item">
@@ -778,9 +780,15 @@ function updateCart() {
   let total = 0;
 
   items.forEach(item => {
-    const name = item.querySelector('.item-name').innerText;
-    const price = Number(item.querySelector('.item-price').innerText.replace('$',''));
+    const nameEl = item.querySelector('.item-name');
+    const priceEl = item.querySelector('.item-price');
     const input = item.querySelector('input');
+
+    // 防呆：HTML 有問題就直接跳過
+    if (!nameEl || !priceEl || !input) return;
+
+    const name = nameEl.innerText;
+    const price = Number(priceEl.innerText.replace('$',''));
     const qty = Number(input.value) || 0;
 
     if (qty > 0) {
@@ -794,6 +802,7 @@ function updateCart() {
   dineTypeEl.textContent = `用餐方式：${getDineType()}`;
   totalPriceEl.textContent = `總金額：$${total}`;
 }
+
 
 // 數量控制
 items.forEach(item => {
@@ -873,6 +882,7 @@ document.getElementById('bing').style.display = 'block';
 
 </body>
 </html>
+
 
 
 
