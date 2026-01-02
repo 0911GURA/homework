@@ -766,27 +766,28 @@ function updateCart() {
   cartList.innerHTML = '';
   let total = 0;
 
-items.forEach(item => {
-  const nameEl = item.querySelector('.item-name');
-  const priceEl = item.querySelector('.item-price');
-  const input = item.querySelector('input');
-  if (!nameEl || !priceEl || !input) return;
+  items.forEach(item => {
+    const nameEl = item.querySelector('.item-name');
+    const priceEl = item.querySelector('.item-price');
+    const input = item.querySelector('input');
+    if (!nameEl || !priceEl || !input) return;
 
-  const name = nameEl.innerText;
-  const price = Number(priceEl.innerText.replace('$',''));
-  const qty = Number(input.value) || 0;
+    const name = nameEl.innerText;
+    const price = Number(priceEl.innerText.replace('$',''));
+    const qty = Number(input.value) || 0;
 
-  if (qty > 0) {
-    hasItem = true;
-    summary += `${name} × ${qty} = $${price * qty}\n`;
-    total += price * qty;
-  }
-});
-
+    if (qty > 0) {
+      const li = document.createElement('li');
+      li.textContent = `${name} × ${qty} = $${price * qty}`;
+      cartList.appendChild(li);
+      total += price * qty;
+    }
+  });
 
   dineTypeEl.textContent = `用餐方式：${getDineType()}`;
   totalPriceEl.textContent = `總金額：$${total}`;
 }
+
 
 
 // 數量控制
@@ -867,6 +868,7 @@ document.getElementById('bing').style.display = 'block';
 
 </body>
 </html>
+
 
 
 
