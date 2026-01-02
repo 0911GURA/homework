@@ -189,20 +189,43 @@ clearBtn.onclick = () => {
 
 // 確認訂單
 confirmBtn.onclick = () => {
-  if (!cartList.children.length) {
+  let summary = '';
+  let total = 0;
+  let hasItem = false;
+
+  items.forEach(item => {
+    const name = item.querySelector('.item-name').innerText;
+    const price = Number(item.querySelector('.item-price').innerText.replace('$',''));
+    const input = item.querySelector('input');
+    const qty = Number(input.value) || 0;
+
+    if (qty > 0) {
+      hasItem = true;
+      summary += `${name} × ${qty} = $${price * qty}\n`;
+      total += price * qty;
+
+      // 鎖定
+      input.disabled = true;
+      item.querySelector('.plus').disabled = true;
+      item.querySelector('.minus').disabled = true;
+    }
+  });
+
+  if (!hasItem) {
     alert('⚠️ 請先選擇商品');
     return;
   }
 
-  items.forEach(item => {
-    item.querySelector('input').disabled = true;
-    item.querySelector('.plus').disabled = true;
-    item.querySelector('.minus').disabled = true;
-  });
+  summary += `\n----------------\n`;
+  summary += `總金額：$${total}\n`;
+  summary += `用餐方式：${getDineType()}`;
+
+  alert(summary);
 
   confirmBtn.disabled = true;
   confirmBtn.innerText = '✅ 訂單已確認';
 };
+
 
 // 分類切換
 categoryBtns.forEach(btn => {
@@ -219,3 +242,4 @@ document.getElementById('bing').style.display = 'block';
 
 </body>
 </html>
+
