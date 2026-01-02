@@ -162,8 +162,20 @@ confirmBtn.addEventListener('click', () => {
     alert('⚠️ 請先選擇商品');
     return;
   }
-  alert('訂單已送出');
+
+  // 鎖定所有輸入（防止再修改）
+  items.forEach(item => {
+    item.querySelector('input').disabled = true;
+    item.querySelector('.plus').disabled = true;
+    item.querySelector('.minus').disabled = true;
+  });
+
+  confirmBtn.disabled = true;
+  confirmBtn.innerText = '✅ 訂單已確認';
+
+  alert('✅ 訂單確認完成，請至櫃檯結帳');
 });
+
 
 // 分類切換
 categoryBtns.forEach(btn => {
@@ -182,5 +194,6 @@ document.getElementById('bing').style.display = 'block';
 
 </body>
 </html>
+
 
 
