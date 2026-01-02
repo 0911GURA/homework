@@ -203,11 +203,6 @@ confirmBtn.onclick = () => {
       hasItem = true;
       summary += `${name} × ${qty} = $${price * qty}\n`;
       total += price * qty;
-
-      // 鎖定
-      input.disabled = true;
-      item.querySelector('.plus').disabled = true;
-      item.querySelector('.minus').disabled = true;
     }
   });
 
@@ -221,10 +216,8 @@ confirmBtn.onclick = () => {
   summary += `用餐方式：${getDineType()}`;
 
   alert(summary);
-
-  confirmBtn.disabled = true;
-  confirmBtn.innerText = '✅ 訂單已確認';
 };
+
 
 
 // 分類切換
@@ -242,4 +235,5 @@ document.getElementById('bing').style.display = 'block';
 
 </body>
 </html>
+
 
