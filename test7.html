@@ -744,7 +744,7 @@
 </main>
 
 <footer>
-  <p>❤️ 系統製作</p>
+  <p>❤️大帥哥製作</p>
 </footer>
 
 <script>
@@ -820,11 +820,11 @@ clearBtn.onclick = () => {
   confirmBtn.innerText = '確認訂單';
 };
 
-// 確認訂單
 confirmBtn.onclick = () => {
   let summary = '';
   let total = 0;
   let hasItem = false;
+  let isPro = false; // ⭐ 是否為內行人
 
   items.forEach(item => {
     const name = item.querySelector('.item-name').innerText;
@@ -836,6 +836,14 @@ confirmBtn.onclick = () => {
       hasItem = true;
       summary += `${name} × ${qty} = $${price * qty}\n`;
       total += price * qty;
+
+      // ⭐ 內行商品判斷
+      if (
+        name.includes('嘉明') ||
+        name.includes('地瓜圓豆花')
+      ) {
+        isPro = true;
+      }
     }
   });
 
@@ -848,8 +856,14 @@ confirmBtn.onclick = () => {
   summary += `總金額：$${total}\n`;
   summary += `用餐方式：${getDineType()}`;
 
+  // ⭐ 內行加成
+  if (isPro) {
+    summary += `\n\n✨ 您真內行 😎💕💕`;
+  }
+
   alert(summary);
 };
+
 
 
 
@@ -862,12 +876,31 @@ categoryBtns.forEach(btn => {
 });
 
 // 初始
+// ⭐ 內行人標章（放這裡）
+items.forEach(item => {
+  const nameEl = item.querySelector('.item-name');
+  if (!nameEl) return;
+
+  const name = nameEl.innerText;
+
+  if (
+    name.includes('嘉明') ||
+    name.includes('地瓜圓豆花')
+  ) {
+    const badge = document.createElement('span');
+    badge.className = 'pro-badge';
+    badge.textContent = '🏅內行推薦';
+    nameEl.appendChild(badge);
+  }
+});
+
 sections.forEach(sec => sec.style.display = 'none');
 document.getElementById('bing').style.display = 'block';
 </script>
 
 </body>
 </html>
+
 
 
 
